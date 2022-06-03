@@ -12,6 +12,6 @@
       docker_image:
         build:
           path: /home/vagrant/java-hello-world
-        name: name/java-hello
+        name: na3150/java-hello
         push: yes
         source: build
