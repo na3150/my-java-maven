@@ -4,7 +4,7 @@
 
   tasks:
     - command: docker image build -t na3150/java-hello java-hello-world/
-    - command: docker login -u c1t1d0s7 -p "{{ lookup('env', 'PASS') }}"
+    - command: docker login -u na3150 -p "{{ lookup('env', 'PASS') }}"
     - command: docker push na3150/java-hello
     - command: docker logout
 
