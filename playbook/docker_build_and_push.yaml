@@ -1,17 +1,18 @@
-- name: Docker Image Build
+- name: Docker Image Build and Push
   hosts: ansible_host
   gather_facts: false
 
   tasks:
     - command: docker image build -t na3150/java-hello java-hello-world/
-    - command: docker login -u na3150 -p "{{ lookup('env', 'PASS') }}"
+    - command: docker login -u c1t1d0s7 -p "{{ lookup('env', 'PASS') }}"
     - command: docker push na3150/java-hello
     - command: docker logout
 
 - name: Docker Run
   hosts: docker_host
   gather_facts: false
-  tasks: 
+
+  tasks:
     - command: docker container rm -f java-hello-world
       ignore_errors: yes
     - command: docker container run -d -p 8080:8080 --name java-hello-world na3150/java-hello
