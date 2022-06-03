@@ -2,10 +2,16 @@
   gather_facts: no
 
   tasks:
-    - docker_container:
+    - name: Remove Container
+      docker_container:
+        name: java-hello
+        state: absent
+      ignore_errors: yes
+    - name: Create Container
+      docker_container:
         name: java-hello
         image: na3150/java-hello
-        state: started
+        state: started 
         recreate: yes
         ports:
           - "8080:8080"
