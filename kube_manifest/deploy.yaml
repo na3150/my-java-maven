@@ -11,9 +11,9 @@ spec:
     metadata:
       labels:
         app: java-hello
-      spec:
-        containers:
-          - name: java-hello
-            image: lunaris/java-hello
-            ports:
-              - containerPort: 8080
+    spec:
+      containers:
+        - name: java-hello
+          image: na3150/java-hello
+          ports:
+            - containerPort: 8080
