@@ -1,0 +1,5 @@
+- hosts: ansible_host
+  gather_facts: no
+
+  tasks:
+    - command: kubectl apply -f kube_manifest/
