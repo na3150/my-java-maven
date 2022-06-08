@@ -5,7 +5,7 @@ metadata:
 spec:
   replicas: 3
   selector:
-    mathchLabels:
+    matchLabels:
       app: java-hello
   template:
     metadata:
